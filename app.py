@@ -57,7 +57,7 @@ st.markdown(
             h1 {
                 font-size: 1.32rem !important;
                 line-height: 1.08 !important;
-                word-break: normal !important;
+                text-align: center;
             }
 
             h2 {
