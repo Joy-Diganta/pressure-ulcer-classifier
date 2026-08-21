@@ -2,13 +2,9 @@
 
 A deep learning-based web application for classifying pressure-ulcer stages from clinical images. The system uses a **ConvNeXt-V2 Base** image classification model and provides an interactive **Streamlit** interface for image upload, prediction, and confidence visualization.
 
----
-
 ## 🚀 Live Demo
 
 **[🩺 Open the Pressure Ulcer Stage Classifier](https://pressure-ulcer-classifier.streamlit.app/)**
-
----
 
 ## 🧪 Training & Experimentation
 
