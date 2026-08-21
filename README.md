@@ -10,7 +10,7 @@ A deep learning-based web application for classifying pressure-ulcer stages from
 
 The complete model development, training, evaluation, and experimentation workflow is available in the Kaggle notebook:
 
-**[📓 View the Kaggle Notebook][(YOUR_KAGGLE_NOTEBOOK_URL)](https://www.kaggle.com/code/joydiganta/pressure-ulcer-convnext-v2-b)**
+**[📓 View the Kaggle Notebook](https://www.kaggle.com/code/joydiganta/pressure-ulcer-convnext-v2-b)**
 
 > The Kaggle notebook contains the training and evaluation workflow used to develop the model presented in this repository.
 
