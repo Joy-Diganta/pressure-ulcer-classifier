@@ -1,0 +1,270 @@
+# 🩹 Pressure Ulcer Stage Classifier
+
+A deep learning-based web application for classifying pressure-ulcer stages from clinical images. The system uses a **ConvNeXt-V2 Base** image classification model and provides an interactive **Streamlit** interface for image upload, prediction, and confidence visualization.
+
+> **Academic Project:** Developed as a team project for the **BME 310 — Machine Learning** course in the Department of Biomedical Engineering.
+
+---
+
+## 📌 Overview
+
+Pressure ulcers are localized injuries to the skin and underlying tissue that require accurate assessment and appropriate clinical management. This project explores the use of deep learning for automated image-based pressure-ulcer stage classification.
+
+The application accepts a clinical photograph and predicts one of seven classes:
+
+| Class | Description |
+|---|---|
+| **Invalid** | Image does not represent a valid pressure-ulcer case for classification |
+| **SDTI** | Suspected Deep Tissue Injury |
+| **Stage I** | Stage I pressure ulcer |
+| **Stage II** | Stage II pressure ulcer |
+| **Stage III** | Stage III pressure ulcer |
+| **Stage IV** | Stage IV pressure ulcer |
+| **Unstageable** | Unstageable pressure ulcer |
+
+The application also displays the model's probability distribution across all seven classes.
+
+---
+
+## ✨ Features
+
+- 🧠 **ConvNeXt-V2 Base** deep learning architecture
+- 🖼️ Clinical-image upload through a Streamlit web interface
+- 📊 Confidence/probability visualization for all seven classes
+- 💻 **CPU-only inference** for deployment compatibility
+- ⚡ Cached model loading for faster subsequent predictions
+- 🎨 Custom academic/research-oriented user interface
+- 📋 Project information dialog
+- 📧 Direct contact link for the project team
+- ⚠️ Clear medical-use disclaimer
+
+---
+
+## 🏗️ Model
+
+The application uses:
+
+**ConvNeXt-V2 Base — `convnextv2_base.fcmae_ft_in22k_in1k_384`**
+
+The trained checkpoint is loaded using `timm` and PyTorch.
+
+### Input preprocessing
+
+Images are converted to RGB and resized to:
+
+```text
+384 × 384 pixels
+```
+
+The following ImageNet normalization is applied:
+
+```text
+Mean = [0.485, 0.456, 0.406]
+Std  = [0.229, 0.224, 0.225]
+```
+
+### Inference
+
+Inference is explicitly configured for:
+
+```text
+Device: CPU
+```
+
+The model is placed in evaluation mode and predictions are converted to class probabilities using softmax.
+
+---
+
+## 🖥️ Application Workflow
+
+```text
+Upload Image
+     │
+     ▼
+RGB Conversion
+     │
+     ▼
+Resize to 384 × 384
+     │
+     ▼
+ImageNet Normalization
+     │
+     ▼
+ConvNeXt-V2 Base
+     │
+     ▼
+Softmax Probabilities
+     │
+     ├── Predicted Class
+     │
+     └── Confidence Distribution
+```
+
+---
+
+## 📁 Repository Structure
+
+```text
+pressure-ulcer-app/
+│
+├── app.py
+├── best_model_fold0.pth
+├── requirements.txt
+├── README.md
+├── LICENSE
+│
+└── project_info.png
+```
+
+### Main files
+
+| File | Purpose |
+|---|---|
+| `app.py` | Streamlit application and inference pipeline |
+| `best_model_fold0.pth` | Trained model checkpoint |
+| `requirements.txt` | Python dependencies |
+| `project_info.png` | Project information graphic displayed in the application |
+| `LICENSE` | License and usage terms |
+| `README.md` | Project documentation |
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<YOUR-USERNAME>/<YOUR-REPOSITORY>.git
+cd <YOUR-REPOSITORY>
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+Activate it on Linux/macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Run Locally
+
+Start the Streamlit application with:
+
+```bash
+streamlit run app.py
+```
+
+The application will normally become available at:
+
+```text
+http://localhost:8501
+```
+
+---
+
+## ☁️ Deployment
+
+The application can be deployed using a Streamlit-compatible hosting environment.
+
+Before deployment, make sure the repository contains:
+
+- `app.py`
+- `requirements.txt`
+- the required model checkpoint
+- all image/assets referenced by the application
+
+The application is configured to perform inference on **CPU**, so a dedicated GPU is not required for deployment.
+
+---
+
+## 📦 Dependencies
+
+The main Python packages used by the application include:
+
+- [Python](https://www.python.org/)
+- [PyTorch](https://pytorch.org/)
+- [Torchvision](https://pytorch.org/vision/stable/)
+- [timm](https://github.com/huggingface/pytorch-image-models)
+- [Streamlit](https://streamlit.io/)
+- [Pillow](https://python-pillow.org/)
+- [Plotly](https://plotly.com/python/)
+
+See `requirements.txt` for the exact dependency list.
+
+---
+
+## ⚠️ Disclaimer
+
+**This application is an academic research prototype developed for educational purposes only.**
+
+**It is not intended for clinical diagnosis, treatment, screening, triage, or medical decision-making.**
+
+Predictions generated by this system should not be used as a substitute for assessment by qualified healthcare professionals.
+
+---
+
+## 🔬 Academic Context
+
+This project was developed as part of the **BME 310 — Machine Learning** course.
+
+The primary objective was to demonstrate the application of modern deep learning techniques to a biomedical imaging problem and to develop an end-to-end inference interface suitable for an academic prototype.
+
+The project involved:
+
+- image classification
+- deep learning model deployment
+- model inference
+- confidence visualization
+- Streamlit-based user interface development
+- CPU-oriented deployment
+
+---
+
+## 👥 Project Team
+
+Developed collaboratively by a **3-member student team** from the Department of Biomedical Engineering.
+
+**Project Contact:**  
+📧 [joydiganta.bd@gmail.com](mailto:joydiganta.bd@gmail.com)
+
+---
+
+## 📄 License
+
+See the [`LICENSE`](LICENSE) file for the licensing terms applicable to this repository.
+
+Third-party libraries, pretrained models, datasets, model components, and other external materials remain subject to their respective licenses and terms of use.
+
+---
+
+## 🙏 Acknowledgements
+
+This project makes use of open-source software and machine learning frameworks, including PyTorch, Torchvision, timm, Streamlit, Pillow, and Plotly.
+
+We acknowledge the authors and maintainers of these projects and the researchers responsible for the underlying model architecture and resources used in this work.
+
+---
+
+## 📌 Project Status
+
+**Status:** Academic Research Prototype
+
+The application is intended to demonstrate the feasibility of deep-learning-based pressure-ulcer image classification in an educational setting. Further validation, dataset expansion, external testing, calibration, and clinical evaluation would be required before any real-world clinical use could be considered.
