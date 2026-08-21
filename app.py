@@ -50,6 +50,7 @@ st.markdown(
                 padding-bottom: 1rem !important;
                 width: 100% !important;
                 max-width: 100% !important;
+                text-align: center;
             }
 
             /* Main headings */
