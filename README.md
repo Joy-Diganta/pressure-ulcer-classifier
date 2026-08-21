@@ -2,7 +2,21 @@
 
 A deep learning-based web application for classifying pressure-ulcer stages from clinical images. The system uses a **ConvNeXt-V2 Base** image classification model and provides an interactive **Streamlit** interface for image upload, prediction, and confidence visualization.
 
-> **Academic Project:** Developed as a team project for the **BME 310 — Machine Learning** course in the Department of Biomedical Engineering.
+---
+
+## 🚀 Live Demo
+
+**[🩺 Open the Pressure Ulcer Stage Classifier](https://pressure-ulcer-classifier.streamlit.app/)**
+
+---
+
+## 🧪 Training & Experimentation
+
+The complete model development, training, evaluation, and experimentation workflow is available in the Kaggle notebook:
+
+**[📓 View the Kaggle Notebook][(YOUR_KAGGLE_NOTEBOOK_URL)](https://www.kaggle.com/code/joydiganta/pressure-ulcer-convnext-v2-b)**
+
+> The Kaggle notebook contains the training and evaluation workflow used to develop the model presented in this repository.
 
 ---
 
