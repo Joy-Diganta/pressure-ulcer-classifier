@@ -287,6 +287,9 @@ if uploaded_file is not None:
             use_container_width=True,
             config={"displayModeBar": False}
         )
+        st.caption(
+            "Double-click the chart to restore the default view."
+        )
 st.markdown(
     """
     <div style="
