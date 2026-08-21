@@ -54,7 +54,7 @@ st.markdown(
 
             /* Main headings */
             h1 {
-                font-size: 2.35rem !important;
+                font-size: 1.8rem !important;
                 line-height: 1.08 !important;
                 word-break: normal !important;
             }
