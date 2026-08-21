@@ -287,8 +287,19 @@ if uploaded_file is not None:
             use_container_width=True,
             config={"displayModeBar": False}
         )
-        st.caption(
-            "Double-click the chart to restore the default view."
+        st.markdown(
+            """
+            <div style="
+                text-align: center;
+                font-family: serif;
+                font-size: 0.9rem;
+                color: #6b6258;
+                margin-top: -10px;
+            ">
+                Double-click the chart to restore the default view.
+            </div>
+            """,
+            unsafe_allow_html=True
         )
 st.markdown(
     """
