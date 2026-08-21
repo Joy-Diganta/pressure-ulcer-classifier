@@ -9,12 +9,17 @@ CurrentModel = "best_model_fold0.pth" # Don't change or rename it.
 
 st.set_page_config(
     page_title="Pressure Ulcer Stage Classifier",
-    page_icon="🩺", 
+    page_icon="🩺",
     layout="centered"
 )
+
 st.markdown(
     """
     <style>
+        /* =====================================================
+           EXISTING DESKTOP STYLING — KEEP
+           ===================================================== */
+
         /* Center text throughout the main application */
         .block-container {
             text-align: center;
@@ -29,6 +34,104 @@ st.markdown(
         [data-testid="stPlotlyChart"] {
             display: flex;
             justify-content: center;
+        }
+
+
+        /* =====================================================
+           MOBILE RESPONSIVE STYLING
+           ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .block-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            /* Main headings */
+            h1 {
+                font-size: 2.35rem !important;
+                line-height: 1.08 !important;
+                word-break: normal !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.15 !important;
+            }
+
+            h3 {
+                font-size: 1.2rem !important;
+            }
+
+            /* Body text */
+            p,
+            .stMarkdown {
+                font-size: 1rem !important;
+                line-height: 1.45 !important;
+            }
+
+            /* Images must never exceed phone width */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            /* Uploaded image */
+            [data-testid="stImage"] {
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            /* File uploader */
+            [data-testid="stFileUploader"] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            /* Success / alert messages */
+            [data-testid="stAlert"] {
+                width: 100% !important;
+                max-width: 100% !important;
+                text-align: center !important;
+            }
+
+            /* Metric */
+            [data-testid="stMetric"] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            /* Plotly chart */
+            [data-testid="stPlotlyChart"] {
+                width: 100% !important;
+                max-width: 100% !important;
+                display: block !important;
+            }
+
+            /* Prevent horizontal overflow */
+            [data-testid="stAppViewContainer"],
+            [data-testid="stAppViewBlockContainer"],
+            .main {
+                max-width: 100% !important;
+                width: 100% !important;
+                overflow-x: hidden !important;
+            }
+
+            /* Footer / long text */
+            footer,
+            .footer {
+                max-width: 100% !important;
+                width: 100% !important;
+                overflow-wrap: anywhere !important;
+                word-wrap: break-word !important;
+                text-align: center !important;
+            }
         }
     </style>
     """,
