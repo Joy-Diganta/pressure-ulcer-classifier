@@ -55,9 +55,20 @@ st.markdown(
 
             /* Main headings */
             h1 {
-                font-size: 1.32rem !important;
-                line-height: 1.08 !important;
-                text-align: center;
+                font-size: 2.0rem !important;
+                line-height: 1.15 !important;
+        
+                /* Critical for mobile */
+                white-space: normal !important;
+                overflow-wrap: break-word !important;
+                word-break: normal !important;
+        
+                width: 100% !important;
+                max-width: 100% !important;
+        
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
 
             h2 {
