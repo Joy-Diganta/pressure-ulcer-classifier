@@ -4,7 +4,6 @@ import torch.nn as nn
 from torchvision import transforms
 from PIL import Image
 import plotly.graph_objects as go
-import time
 
 CurrentModel = "best_model_fold0.pth" # Don't change or rename it.
 
@@ -37,41 +36,6 @@ st.markdown(
             justify-content: center;
         }
 
-
-
-        /* =====================================================
-           PREDICTION + CONFIDENCE ANIMATIONS — ADDED ONLY
-           ===================================================== */
-
-        @keyframes predictionSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes confidenceSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        [data-testid="stMetric"] {
-            animation: predictionSlideIn 0.7s ease-out both;
-        }
-
-        [data-testid="stMetric"] + div {
-            animation: confidenceSlideIn 0.7s ease-out 0.5s both;
-        }
 
         /* =====================================================
            MOBILE RESPONSIVE STYLING
@@ -269,8 +233,6 @@ if uploaded_file is not None:
             border=True,
             label_visibility="collapsed"
         )
-
-        time.sleep(0.5)
 
         st.subheader(
             f"Confidence Level: {confidence_percentage:.2f}%",
