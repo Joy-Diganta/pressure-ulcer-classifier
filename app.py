@@ -150,9 +150,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("Pressure Ulcer Stage Classifier 📊", text_alignment = "center")
+st.title("Pressure Ulcer Stage Classifier 📊", text_alignment = "right")
 st.subheader("A Deep Learning Prototype 🔬", divider = "red", text_alignment = "center")
-st.write("Upload a clinical photograph to check the classification stage.")
+st.markdown("**Upload a clinical photograph to check the classification stage.**")
 
 CLASS_NAMES = ['Invalid', 'SDTI', 'Stage_I', 'Stage_II', 'Stage_III', 'Stage_IV', 'Unstageable']
 
