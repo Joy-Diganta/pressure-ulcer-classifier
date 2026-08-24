@@ -313,7 +313,7 @@ st.markdown(
         line-height: 1.6;
     ">
         © 2026 BME 310 Machine Learning Project<br>
-        Department of Biomedical Engineering, BUET<br>
+        <a href = "https://bme.buet.ac.bd/">Department of Biomedical Engineering, BUET</a><br>
         <b>Disclaimer:</b> Academic research prototype for educational purposes only.<br>
         <span style="
             display: inline-block;
